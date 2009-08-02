@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>Roku Remote</title>
+	
+	<!-- AIR Library -->
+	<script type="text/javascript" src="js/adobe/AIRAliases.js"></script>
+	<script type="text/javascript" src="js/adobe/AIRIntrospector.js"></script>
+	
+	<!-- Other Libraries -->
+	<script src="js/jquery-1.2.3.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="js/ui/jquery.dimensions.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/ui/ui.base.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/ui/ui.draggable.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/ui/ui.draggable.ext.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/ui/ui.slider.js" type="text/javascript" charset="utf-8"></script>
+	
+	<!-- App Code -->
+	<!-- Still Experimental -->
+	<script src="js/Debug.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/SoundBridgeSocket.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="js/rokuConnect.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/application.js" type="text/javascript" charset="utf-8"></script>
+	
+	
+	<link rel="stylesheet" href="css/application.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<style type="text/css" media="screen">
+		body {
+			color: #333;
+		}
+	</style>
+</head>
+
+<body>
+
+<div id="libraryInfo">Library: <select id="librarySelector"></select></div>
+
+<dl>
+	<dt>Device Name:</dt>
+	<dd id="deviceName"></dd>
+	<dt>Playing:</dt>
+	<dd id="currentSong"></dd>
+</dl>
+
+<form>
+	<input type="submit" value="Previous" id="previousButton" />
+	<input type="submit" value="Play" id="playButton" />
+	<input type="submit" value="Pause" id="pauseButton" />
+	<input type="submit" value="Next" id="nextButton" />
+	<hr/>
+	<input type="submit" value="Device State?" id="stateButton" />
+	
+</form>
+
+<div id="volumeSlider"><div class="ui-slider-handle"></div></div>
+
+<div id="panePlaylist">
+	<h2>Queue</h2>
+	<table id="songQueue">
+		<thead>
+			<tr>
+				<th>Title</th>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+
+</div>
+
+<div id="paneSongList">
+<h2>All Songs</h2>
+	<table id="songList">
+		<thead>
+			<tr>
+				<th>Song Name</th>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+</div>
+
+<div id="readout"></div>
+
+</body>
+</html>

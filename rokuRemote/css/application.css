@@ -1,0 +1,53 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	font-size: 10px;
+}
+
+
+#libraryInfo {
+	font-size: 1.6em;
+	padding: 0.2em 0.4em;
+	color: #fff;
+	background: #000;
+	opacity: 0.9;
+}
+
+#volumeSlider {
+	position: relative;
+	width: 200px;
+	height: 5px;
+	background: #999;
+}
+	#volumeSlider div {
+		position: absolute;
+		width: 5px;
+		height: 15px;
+/*		margin: -5px 0 0 -2px;*/
+		background: #333;
+	}
+	
+	
+	
+#panePlaylist {
+	position: absolute;
+	left: 0;
+	top: 200px;
+	right: 0;
+	bottom: 0;
+	overflow: auto;
+}
+	#songQueue tbody tr {
+		cursor: pointer;
+	}
+
+#paneSongList {
+	display: none;
+}
+
+tr.odd {
+	background: #ddd;
+}
