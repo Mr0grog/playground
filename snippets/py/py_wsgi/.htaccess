@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteBase /pyweb
+
+RewriteCond %{REQUEST_URI} !^/snippets/py/py_wsgi/dispatch.fcgi [NC]
+RewriteCond %{REQUEST_URI} !^/snippets/py/py_wsgi/static [NC]
+RewriteCond %{REQUEST_URI} !\.(css|png|jpg|gif)$ [NC]
+RewriteRule ^(.*)$ dispatch.fcgi/$1 [QSA,NC]
