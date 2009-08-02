@@ -1,0 +1,54 @@
+html, body {
+	margin: 6px;
+	padding: 0;
+	font-size: 12px;
+	font-family: helvetica, arial, sans-serif;
+	background: #fff;
+	width: 860px;
+}
+.col {
+	float: left;
+	margin-right: 30px;
+	width: 400px;
+}
+.news_item {
+	margin: 0 0 0.5em;
+	position: relative;
+	width: 200px;
+}
+.world_news {
+	background: #ed0;
+	background: transparent;
+}
+
+.tech_news {
+	background: #db9;
+	background: #ed0;
+	background: transparent;
+}
+
+h2 {
+	margin: 0;
+	padding: 0.5em 0;
+	font-size: 0.8em;
+	color: #333;
+	font-weight: normal;
+}
+	h2 a {
+		color: #333;
+		text-decoration: none;
+	}
+a.source {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	padding: 0.1em 0.25em;
+	font-size: 10px;
+	color: #fff;
+	background: #000;
+	opacity: 0.5;
+}
+img {
+	width: 200px;
+	vertical-align: bottom;
+}
