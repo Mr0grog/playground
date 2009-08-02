@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>contenteditable_resizable_inputs</title>
+	<meta name="generator" content="TextMate http://macromates.com/">
+	<meta name="author" content="Rob Brackett">
+	<!-- Date: 2009-06-15 -->
+	
+	<style type="text/css">
+		body {
+			line-height: 1.4;
+		}
+		
+		h1 {
+			font-size: 2em;
+		}
+		
+		h2 {
+			font-size: 1em;
+			margin: 2em 0 0;
+		}
+		
+		#will_be_editable {
+			margin: 1em 0 0;
+			border: 1px solid #ccc;
+		}
+	</style>
+</head>
+<body>
+	
+	<h1>When contenteditable elements are on the page, absolutely positioned inputs become editable</h1>
+	
+	<h2>Here are some inputs…</h2>
+	inside a span: <br>
+	<span><input type="text" value="text"></span><br>
+	absolutely positioned inside a relatively positioned span (double-click to see issue): <br>
+	<span style="position:relative;"><input type="text" value="text" style="position:absolute;"></span><br>
+	It also happens with textareas: <br>
+	<span style="position:relative;"><textarea style="position:absolute;">Textarea!</textarea></span><br><br>
+	statically positioned inside an absolutely positioned span (workaround for issue):<br>
+	<span style="position:relative;"><span style="position:absolute;"><input type="text" value="text"></span></span><br>
+	Radio input (doesn't exhibit issue): <span style="position:relative;"><input type="radio" value="text" style="position:absolute;"></span><br>
+	Checkbox input (doesn't exhibit issue): <span style="position:relative;"><input type="checkbox" value="text" style="position:absolute;"></span><br>
+	
+	
+	<h2>Editable Region</h2>
+	<button id="make_editable">Set contentEditable=true</button>
+	<button id="make_non_editable">Set contentEditable=false</button>
+	<div id="will_be_editable">Hi there, I'll be editable when you click the button above. Edit me!<br/></div>
+	
+	
+	<h2>Instructions</h2>
+	<ol>
+		<li>Try double-clicking on the various inputs above. They should behave normally.</li>
+		<li>Hit the "Set contentEditable=true" button above. This will set the <code>contentEditable</code> property on the div to <code>true</code></li>
+		<li>Try double-clicking on the various inputs. The second input and the textarea will be resizable and positionable!</li>
+		<li>Hit the "Set contentEditable=false" button above. The inputs and textarea should react normally again.</li>
+		<li>Rinse and repeat</li>
+	</ol>
+	
+	
+	<script type="text/javascript" charset="utf-8">
+		var makeEditable = function() {
+			document.getElementById("will_be_editable").contentEditable = true;
+		};
+		var makeNonEditable = function() {
+			document.getElementById("will_be_editable").contentEditable = false;
+		};
+		document.getElementById("make_editable").addEventListener("click", makeEditable, false);
+		document.getElementById("make_non_editable").addEventListener("click", makeNonEditable, false);
+	</script>
+</body>
+</html>
