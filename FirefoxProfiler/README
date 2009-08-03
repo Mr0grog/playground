@@ -1,0 +1,16 @@
+Firefox Profiler
+----------------
+
+A simple Python script for starting Firefox with a given profile. This gives you an easy way to have simultaneous installs of Firefox 2, 3.0, 3.5, and so on. This is extremely useful for OS X; there are simpler ways to accomplish this in Windows.
+
+TO USE (OS X):
+1. Place a copy of start_with_profile_xxx inside the MacOS directory inside of the Firefox .app bundle.
+2. Rename it to "start_with_profile_[name of profile you want to use]", e.g. "start_with_profile_firefox2"
+3. Open the file "info.plist" inside the Firefox .app bundle and find the lines:
+		<key>CFBundleExecutable</key>
+		<string>firefox-bin</string>
+   Change the second line to be the new name you chose for start_with_profile_xxx above, e.g.
+		<string>start_with_profile_firefox2</string>
+
+4. For an added bonus, find .app bundle->Resources->en.lproj->InfoPlist.strings and change CFBundleName to something more useful, like:
+		CFBundleName = "Firefox 2.0";
